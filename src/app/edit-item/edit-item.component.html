@@ -1,0 +1,25 @@
+<app-header title="Edit Food Item"></app-header>
+<div class="container mx-auto p-4 d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 100px);">
+  <div class="card p-4" style="background-color: #A9DFBF; width: 100%; max-width: 600px;">
+    <form (ngSubmit)="updateItem()" class="space-y-4">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" class="form-control" [(ngModel)]="name" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description" class="form-control" [(ngModel)]="description" name="description" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input id="price" type="number" class="form-control" [(ngModel)]="price" name="price" required>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-primary me-2" type="submit">Update Item</button>
+        <button class="btn btn-secondary me-2" type="button" (click)="clearFields()">Clear</button>
+        <button class="btn btn-danger" type="button" (click)="goBack()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+<app-footer></app-footer>

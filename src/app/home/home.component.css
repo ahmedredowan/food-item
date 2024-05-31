@@ -1,0 +1,37 @@
+.container {
+  max-width: 1200px;
+}
+
+.btn-primary {
+  background-color: #C39BD3; /* Light purple color for Add Food Item button */
+  margin-right: 1rem; /* Add some margin to the right */
+}
+
+.btn-primary:active {
+  background-color: #9b59b6; /* Darker purple on click */
+}
+
+.btn-secondary:active {
+  background-color: #5a6268; /* Darker shade for secondary button on click */
+}
+
+.btn-danger:active {
+  background-color: #c82333; /* Darker shade for danger button on click */
+}
+
+.fixed-card {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.expanded-card {
+  height: auto;
+}
+
+.text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

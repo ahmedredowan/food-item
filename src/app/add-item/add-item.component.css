@@ -1,0 +1,11 @@
+.container {
+  max-width: 600px;
+}
+
+.btn-primary:active {
+  background-color: #9b59b6; /* Darker purple on click */
+}
+
+.btn-danger:active {
+  background-color: #c82333; /* Darker shade for danger button on click */
+}

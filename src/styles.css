@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+
+
+
+
+
+/* Custom Global Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #AED6F1; /* Light blue background for all pages */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Container for fixed max-width */
+.container {
+  max-width: 100%;
+  padding: 1rem;
+}
+
+.card-bg-1 {
+  background-color: #ffffff; /* White background for cards */
+}
+
+.card-bg-2 {
+  background-color: #f9f9f9; /* Light gray background for cards */
+}
+
+.card-bg-3 {
+  background-color: #eef2f3; /* Very light gray background for cards */
+}
+
+.card-bg-4 {
+  background-color: #e7e9eb; /* Another light gray background for cards */
+}

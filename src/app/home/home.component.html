@@ -1,0 +1,62 @@
+<app-header title="Food Items List">
+  <button class="btn btn-primary" (click)="goToAddItem()">Add Food Item</button>
+</app-header>
+<div class="container mx-auto p-4">
+  <div class="row">
+    <!-- Dummy Card 1 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-lg rounded-lg overflow-hidden fixed-card">
+        <div class="card-header">
+          <h5 class="card-title">Pizza</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text text-truncate">This is a dummy description .</p>
+          <p class="card-text text-lg font-bold">Price: $10.00</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button class="btn btn-secondary">Edit</button>
+          <button class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dummy Card 2 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-lg rounded-lg overflow-hidden fixed-card">
+        <div class="card-header">
+          <h5 class="card-title">Burger</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text text-truncate">This is a dummy description</p>
+          <p class="card-text text-lg font-bold">Price: $15.00</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button class="btn btn-secondary">Edit</button>
+          <button class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dynamic Cards -->
+    <div *ngFor="let item of items$ | async; let i = index" class="col-md-4 mb-4">
+      <div class="card shadow-lg rounded-lg overflow-hidden fixed-card" [ngClass]="{ 'expanded-card': item.expanded }">
+        <div class="card-header">
+          <h5 class="card-title">{{ item.name }}</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text" [ngClass]="{ 'text-truncate': !item.expanded }">{{ item.description }}</p>
+          <ng-container *ngIf="item.description.length > 100">
+            <a href="#" *ngIf="!item.expanded" (click)="toggleExpand(item)">more</a>
+            <a href="#" *ngIf="item.expanded" (click)="toggleExpand(item)">less</a>
+          </ng-container>
+          <p class="card-text text-lg font-bold">Price: {{ item.price | currency }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button class="btn btn-secondary" (click)="goToEditItem(item.id)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteItem(item.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
